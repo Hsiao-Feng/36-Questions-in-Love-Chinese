@@ -1,0 +1,421 @@
+/* GENERAL ========================================= */
+
+/* Zero default margin & padding around common elements */
+article, blockquote, body, dd, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, header, li, menu, nav, ol, p, section, ul {
+	margin: 0;
+	border: 0 none #FFFFFF;
+	padding: 0;
+}
+
+html.slideshow {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	background-color: #ffb4a2;
+	color: #865a56;
+	line-height: 1.8;
+	font-family: 'Playfair Display', serif;
+	font-size: 130%;
+	text-align: left;
+}
+
+@media (max-width: 700px) {
+	body {
+		font-size: 100%;
+		line-height: 1.6;
+	}
+}
+
+@media (max-height: 400px) {
+	body {
+		font-size: 80%;
+		line-height: 1.6;
+	}
+}
+
+.slideshow body {
+	height: 100%;
+	overflow: hidden;
+}
+
+a {
+	color: #865a56;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #865a56;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+img {
+	border: 0 none transparent;
+}
+
+button, input, select, table, textarea, a.button {
+	font-size: 100%;
+	font-family: 'Josefin Sans', sans-serif;
+	outline: none;
+}
+
+
+
+
+/* CONTENT ========================================= */
+
+.slideshow .container,
+.slideshow ol li {
+	display: table;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: opacity 0.5s linear;
+}
+
+.slideshow .container.on,
+.slideshow ol li.on {
+	z-index: 100;
+}
+
+.slideshow .container > .inner,
+.slideshow ol li > .inner {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.container > .inner > .inner,
+ol li > .inner > .inner {
+	position: relative;
+	width: 100%;
+	max-width: 30em;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 0 3em;
+}
+
+#intro {
+	opacity: 0;
+}
+
+#intro.on {
+	opacity: 1;
+}
+
+#title {
+	margin-bottom: 0.4em;
+	font-size: 240%;
+	text-align: center;
+	white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+	#title {
+		font-size: 7vw;
+	}
+}
+
+h1 {
+	margin-left: -0.1em;
+	color: #ffffff;
+	font-size: 119%;
+	font-family: 'Playfair Display SC', serif;
+	font-weight: normal;
+	line-height: 0.1;
+}
+
+h1 span {
+	position: relative;
+	top: 0.28em;
+	font-size: 300%;
+}
+
+h2 {
+	margin-left: 4.6em;
+	margin-top: 0.45em;
+	color: #865a56;
+	font-size: 81%;
+	font-style: italic;
+	font-weight: normal;
+}
+
+#intro p {
+	text-align: justify;
+}
+
+#intro p a {
+	color: rgba(134, 90, 86, 1);
+}
+
+#intro p a:visited {
+	color: rgba(134, 90, 86, 1);
+}
+
+#intro p button,
+#instructions button {
+	display: block;
+	width: 16em;
+	margin: 1.5em auto 0 auto;
+	border: 3px solid #ffffff;
+	border-radius: 5px;
+    outline: none;
+	padding: 0.8em 0 0.5em 0;
+	background-color: transparent;
+	color: #ffffff;
+	font-size: 90%;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.15s linear;
+}
+
+@media (max-width: 700px) {
+	#intro p button,
+	#instructions button {
+		width: 100%;
+	}
+}
+
+#intro p button:hover,
+#instructions button:hover {
+	background-color: #ffffff;
+	color: #ffb4a2;
+}
+
+.adsbygoogle {
+	margin-top: 1.8em;
+}
+
+#instructions {
+	text-align: justify;
+	opacity: 0;
+}
+
+#instructions.on {
+	opacity: 1;
+}
+
+#instructions > .inner > .inner:before {
+	content: url(../images/face1.svg);
+	position: absolute;
+	left: -15%;
+	top: 50%;
+	width: 15%;
+	margin-top: -20%;
+}
+
+#instructions > .inner > .inner:after {
+	content: url(../images/face2.svg);
+	position: absolute;
+	right: -15%;
+	top: 50%;
+	width: 15%;
+	margin-top: -20%;
+}
+
+#instructions button {
+	width: 8em;
+}
+
+ol {
+	margin-top: 1.5em;
+	margin-bottom: 5em;
+	transition: opacity 0.5s linear;
+}
+
+ol.off {
+	opacity: 0;
+}
+
+.slideshow ol li {
+	font-size: 200%;
+	font-style: italic;
+	text-align: center;
+	vertical-align: center;
+}
+
+@media (max-width: 700px) {
+	.slideshow ol li {
+		font-size: 135%;
+	}
+}
+
+ol li > .inner > .inner {
+	max-width: 28em;
+	padding: 0 4em;
+}
+
+@media (max-width: 700px) {
+	ol li > .inner > .inner {
+		padding: 0 2.5em;
+	}
+}
+
+.slideshow ol li span {
+	display: inline-block;
+	position: relative;
+	opacity: 0;
+	-webkit-transform: translate(200px, 0);
+	-moz-transform: translate(200px), 0;
+	-ms-transform: translate(200px, 0);
+	transform: translate(200px, 0);
+	transition: -webkit-transform 0.5s ease, opacity 0.3s linear;
+	transition: transform 0.5s ease, opacity 0.3s linear;
+}
+
+@media (max-width: 700px) {
+	.slideshow ol li span {
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		transform: none;
+	}
+}
+
+ol li span.on {
+	opacity: 1;
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	transform: none;
+}
+
+ol li span.off {
+	opacity: 0;
+	-webkit-transform: translateX(-200px);
+	-moz-transform: translateX(-200px);
+	-ms-transform: translateX(-200px);
+	transform: translateX(-200px);
+}
+
+@media (max-width: 700px) {
+	.slideshow ol li span.off {
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		transform: none;
+	}
+}
+
+ol li strong {
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+	ol li strong {
+		white-space: normal;
+	}
+}
+
+#stare {
+	opacity: 0;
+}
+
+#stare.on {
+	opacity: 1;
+}
+
+#stare p:first-child {
+	margin-bottom: 1.5em;
+	color: #ffffff;
+}
+
+#numbering {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 1;
+	width: 4em;
+	margin-left: -2em;
+	margin-top: -0.415em;
+	color: #ffffff;
+	font-size: 1600%;
+	font-family: 'Josefin Sans', sans-serif;
+	text-align: center;
+	line-height: 1;
+	opacity: 0;
+	transition: opacity 1s linear;
+}
+
+#numbering.on {
+	opacity: 0.15;
+}
+
+.progress {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	width: 0;
+	height: 8px;
+	background-color: #ffffff;
+	opacity: 0;
+	transition: opacity 1s linear, width 2s ease;
+}
+
+.progress.on {
+	opacity: 1;
+}
+
+.prevNext {
+	position: fixed;
+	top: 50%;
+	z-index: 200;
+	width: 4em;
+	height: 4em;
+	box-sizing: border-box;
+	margin-top: -2em;
+	border-radius: 50%;
+	border: 0 none transparent;
+	background-color: rgba(255,255,255,0.2);
+	color: #ffffff;
+	font-size: 130%;
+	font-family: 'Josefin Sans', sans-serif;
+	text-decoration: none;
+	text-align: right;
+	opacity: 0;
+	transition: all 0.15s linear, opacity 1s linear;
+}
+
+.prevNext.on {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.prevNext:hover {
+	background-color: #ffffff;
+	color: #ffb4a2;
+}
+
+.prevNext:active {
+	color: #865a56;
+	transition: none;
+}
+
+#prev {
+	left: -2em;
+	padding-right: 0.6em;
+}
+
+#next {
+	right: -2em;
+	padding-left: 0.6em;
+	font-size: 250%;
+	text-align: left;
+}
+
+@media (max-width: 700px) {
+	#next {
+		font-size: 130%;
+	}
+}
+
